@@ -44,4 +44,12 @@ public class PlayerController : MonoBehaviour
             // Launch a projectile from the player
             Instantiate(projectilePrefab, transform.position + Vector3.forward * 1.2f, projectilePrefab.transform.rotation);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Projectile"))
+        {
+            Debug.Log("Game Over!");
+        }
+    }
 }

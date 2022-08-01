@@ -516,6 +516,8 @@ MonoBehaviour:
   - {fileID: 7104910158636511134, guid: adf9c84d386694c118f991d69d45da9f, type: 3}
   - {fileID: 3532059439654018791, guid: 92bee6d20bb1f4c268e89016106290ff, type: 3}
   spawnRangeX: 10
+  spawnZLimitMax: 15
+  spawnZLimitMin: 5
   spawnZPos: 20
 --- !u!1 &992285705
 GameObject:
@@ -691,27 +693,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
---- !u!1 &2100148717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
-  m_PrefabInstance: {fileID: 2100148716}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2100148718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100148717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1661bc91782b41b5bc14366bda8aaf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalInput: 0
-  verticalInput: 0
-  speed: 10
-  xRange: 10
-  zLimitMin: 0
-  zLimitMax: 14
-  projectilePrefab: {fileID: 3135540615451895193, guid: c9e8651dd900c45ffb2e7d50b4590fbe, type: 3}
