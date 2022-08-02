@@ -7,6 +7,9 @@ TagManager:
   - Dog
   - Ground
   - Projectile
+  - Left
+  - Top
+  - Right
   layers:
   - Default
   - TransparentFX

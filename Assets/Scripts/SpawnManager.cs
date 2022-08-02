@@ -9,10 +9,9 @@ public class SpawnManager : MonoBehaviour
     public float spawnZLimitMax = 15.0f;
     public float spawnZLimitMin = 5.0f;
     public float spawnZPos = 25.0f;
-    private float startDelay = 2.0f;
-    private float spawnInterval = 2.0f;
+    private float spawnInterval = 5.0f;
 
-    private List<(int, string)> actionList = new();
+    private readonly List<(int, string)> actionList = new();
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +33,10 @@ public class SpawnManager : MonoBehaviour
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Vector3 spawnPos = new(-20, 0, Random.Range(spawnZLimitMin, spawnZLimitMax));
 
-        Instantiate(animalPrefabs[animalIndex],
+        GameObject animalPrefab = animalPrefabs[animalIndex];
+        animalPrefab.tag = "Left";
+
+        Instantiate(animalPrefab,
             spawnPos,
             animalPrefabs[animalIndex].transform.rotation * Quaternion.Euler(new(0, -90, 0)));
 
@@ -46,7 +48,10 @@ public class SpawnManager : MonoBehaviour
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Vector3 spawnPos = new(20, 0, Random.Range(spawnZLimitMin, spawnZLimitMax));
 
-        Instantiate(animalPrefabs[animalIndex],
+        GameObject animalPrefab = animalPrefabs[animalIndex];
+        animalPrefab.tag = "Right";
+
+        Instantiate(animalPrefab,
             spawnPos,
             animalPrefabs[animalIndex].transform.rotation * Quaternion.Euler(new(0, 90, 0)));
 
@@ -58,7 +63,10 @@ public class SpawnManager : MonoBehaviour
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Vector3 spawnPos = new(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnZPos);
 
-        Instantiate(animalPrefabs[animalIndex],
+        GameObject animalPrefab = animalPrefabs[animalIndex];
+        animalPrefab.tag = "Top";
+
+        Instantiate(animalPrefab,
             spawnPos,
             animalPrefabs[animalIndex].transform.rotation);
 

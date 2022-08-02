@@ -11,12 +11,13 @@ public class PlayerController : MonoBehaviour
     public float zLimitMin = 0.0f;
     public float zLimitMax = 14.0f;
 
+    private bool IsShowedGameOver = false;
+
     public GameObject projectilePrefab;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-
+        PlayerManager.OnPlayerStateChanged += PlayerManager_OnPlayerStateChanged;
     }
 
     // Update is called once per frame
@@ -49,6 +50,21 @@ public class PlayerController : MonoBehaviour
     {
         if (!other.CompareTag("Projectile"))
         {
+            PlayerManager.Instance.DecreaseLives();
+            Debug.Log("Lives = " + PlayerManager.Instance.State.Lives);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        PlayerManager.OnPlayerStateChanged -= PlayerManager_OnPlayerStateChanged;
+    }
+
+    private void PlayerManager_OnPlayerStateChanged(PlayerState state)
+    {
+        if (state.IsGameOver && !IsShowedGameOver)
+        {
+            IsShowedGameOver = true;
             Debug.Log("Game Over!");
         }
     }

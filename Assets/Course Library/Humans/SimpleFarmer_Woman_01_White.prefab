@@ -78,7 +78,7 @@ MonoBehaviour:
   xRange: 10
   zLimitMin: 0
   zLimitMax: 14
-  projectilePrefab: {fileID: 3135540615451895193, guid: c9e8651dd900c45ffb2e7d50b4590fbe, type: 3}
+  projectilePrefab: {fileID: 8665013959259889563, guid: a2f5299c110d64f81add4e0a425cde20, type: 3}
 --- !u!65 &2100148719
 BoxCollider:
   m_ObjectHideFlags: 0
