@@ -10,7 +10,6 @@ public class DetectCollisions : MonoBehaviour
         {
             PlayerManager.Instance.IncreaseScore();
             Debug.Log("Score = " + PlayerManager.Instance.State.Score);
-            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }
